@@ -85,7 +85,7 @@ $(function () {
     });
     //关闭翻牌弹窗
     $('.close').on('click',function(){
-        flag = true;
+        //flag = true;
         $(this).parent().parent().attr('class','');
         hideMask();
         return false;
