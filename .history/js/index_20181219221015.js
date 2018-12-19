@@ -187,4 +187,74 @@ $(function () {
         $("#mask").hide();
     }
 
+
+
+    //-------
+    (function(){
+        var can = document.getElementById('can');
+		var con = can.getContext('2d');
+		var pw,ph,cw,ch;
+		(function(){
+
+			var setAttr = function(){
+				pw = window.innerWidth;
+				ph = window.innerHeight;
+				cw = pw*2;
+				ch = ph *2;
+				can.width = cw;
+				can.height = ch;
+				//can.setAttribute("style","width:"+pw+"px; height:"+ph+"px;");
+			}
+			//window.addEventListener('resize', setAttr, false);
+			setAttr();
+		})();	
+			
+		var us = [];
+
+		for (var i = 0; i < cw*0.6; i++) {
+			var a = new me();
+			us.push(a);
+		}
+
+		go();
+		function go(){
+			con.clearRect(0,0,cw,ch);
+			for (var i in us) {
+                us[i].image.src="../images/xqb.png"
+				us[i].draw();
+			}
+			requestAnimationFrame(go);
+		}
+
+		function me(){
+			var that = this;
+			function makeMe (){
+				that.x = cw * Math.random();
+				that.y = ch+ch* Math.random();
+				that.opacity = 0.3+Math.random()*0.5;
+				that.w = 10 * Math.random()+10;	
+				that.s =1+4* Math.random();			
+				that.c1 = Math.ceil(Math.random()*255);
+				that.c2 = Math.ceil(Math.random()*255);
+				that.c3 =Math.ceil( Math.random()*255);				
+			}
+
+			makeMe();
+
+
+
+			this.draw = function(){
+
+				if (this.opacity < 0) {
+					makeMe();
+				}
+				this.y-=this.s;
+				this.opacity-= 0.0005;
+				con.beginPath();
+				con.arc(this.x,this.y,this.w,0,2*Math.PI);
+				con.fillStyle = "rgba("+this.c1+","+this.c2+","+this.c3+","+this.opacity+")";
+				con.fill();
+			}
+		}
+    })();
 });

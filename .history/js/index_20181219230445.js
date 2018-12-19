@@ -187,4 +187,70 @@ $(function () {
         $("#mask").hide();
     }
 
+
+
+    //-------
+    (function () {
+
+        // 生成随机数
+        function rnd() {
+            let flag = Math.random() > 0.5 ? 1 : -1
+            return 80 * Math.random() * flag
+        }
+
+        class FlyHeart {
+            constructor(ctx, img) {
+                this.ctx = ctx;
+                this.img = heart;
+                // 拿到红心的运动轨迹，一系列拟合点坐标
+                
+            }
+            draw() {
+                // 依次取出轨迹的每个点
+               // let position = this.bezierArr.shift();
+
+                // 清除上次画的
+                this.clear();
+
+                if (position) {
+                    this.ctx.save()
+                    // 根据当前数组长度算出透明度
+                    this.ctx.globalAlpha = this.bezierArr.length / 30;
+                    this.ctx.drawImage(this.img, position.x, position.y, 20, 20);
+                    this.ctx.restore();
+                    this.prevPosition = position;
+                }
+            }
+            // 清除上次画的
+            clear() {
+                if (this.prevPosition) {
+                    this.ctx.clearRect(this.prevPosition.x, this.prevPosition.y, 20, 20);
+                }
+            }
+        }
+
+        setInterval(function(){
+            heartArr.push(new FlyHeart(ctx, heart));
+        },100);
+
+        let heartArr = []
+        const cvs = document.getElementById('can')
+        const ctx = cvs.getContext('2d')
+        const heart = document.getElementById('heart') //图片
+
+        function draw() {
+            if (heartArr.length) {
+                for (let heart of heartArr) {
+                    heart.draw();
+                    if (heart.bezierArr.length === 0) {
+                        heart.clear();
+                        let index = heartArr.indexOf(heart)
+                        heartArr.splice(index, 1)
+                    }
+                }
+            }
+            requestAnimationFrame(draw)
+        }
+        draw()
+    })();
 });

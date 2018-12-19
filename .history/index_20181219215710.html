@@ -10,9 +10,9 @@
     <link rel="stylesheet/less" href="css/styles.less">
     <script src="js/less-1.7.0.min.js"></script>
     <script src="js/jquery-1.10.1.min.js"></script>
-    <script src="js/imgLoader.js"></script>
+    <script src="js/preload.js"></script>
     <script>
-        imgLoader([
+        var imgs =[
             'images/load_1.png',
             'images/load_2.png',
             'images/box_cover.png',
@@ -54,15 +54,26 @@
             'images/wangka_bg_03.png',
             'images/xkg.png',
             'images/xqb.png',
-            'images/xin.png',
-            'images/xin_1.png'
-        ], function (percentage) {
-            var percentT = percentage * 100;
-            $('#loader_info').html('Loading ' + (parseInt(percentT)) + '%');
-            $('#loader__progress')[0].style.width = percentT + '%';
-            if (percentage == 1) {
+            'audio/music.mp3',
+        ];
+        var index = 0,
+        len = imgs.length,
+        progress = $('#loader_info');
+
+        $.preload(imgs, {
+            each: function (count) {
+                 progress.html(Math.round((count + 1) / len * 100) + '%');
+                 $('#loader__progress')[0].style.width = Math.round((count + 1) / len * 100) + '%';
+            },
+            end: function () {
                 $('#loader').remove();
                 $('.sy').show();
+                var sHeight = document.documentElement.clientHeight;
+                if (sHeight < 600) {
+                    $('.wrap').css('position', 'relative');
+                } else {
+                    $('.wrap').css('position', 'fixed');
+                }
             }
         });
     </script>
@@ -91,7 +102,7 @@
             </div>
         </header>
         <section>
-            <canvas id="can"></canvas>
+            <canvas></canvas>
         </section>
         <main>
             <div class="card-box">
@@ -204,5 +215,4 @@
 </body>
 </html>
 <script src="js/jweixin-1.0.0.js"></script>
-<script src="js/flutter-hearts-zmt.js"></script>
 <script src="js/index.js"></script>

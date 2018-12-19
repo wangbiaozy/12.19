@@ -187,4 +187,53 @@ $(function () {
         $("#mask").hide();
     }
 
+
+
+    //-------
+    (function(){
+        var ctx;
+        var g=2;
+        var balls=[];
+        function Ball(bx,by,rad,color){
+            this.bx = bx;
+            this.by = by;
+            this.rad = rad;
+            this.fillStyle = color;
+            this.draw = drawball;
+        }
+        function drawball(){
+            ctx.fillStyle = this.fillStyle;
+            ctx.beginPath();
+            ctx.arc(this.bx,this.by,this.rad,0,Math.PI*2,true);
+            ctx.fill();
+        }
+        
+        function init(){
+            ctx = document.getElementById('can').getContext('2d');
+            setInterval(creat,100);
+        }
+        function drawall(){
+           // ctx.clearRect(0,0,600,600);
+            
+            var i;
+            for (i=0;i<balls.length;i++){
+                balls[i].draw();
+            }
+            ctx.strokeRect(0,0,600,600);
+        }
+        function creat(){
+            var col = 'rgb('+ Math.floor(Math.random()*256) + ','+ Math.floor(Math.random()*256) + ',' + Math.floor(Math.random()*256) + ')';
+            bx = Math.random()*575+20;
+            by = Math.random()*575+20;
+            rad = Math.random()*10+10;
+            var ball = new Ball(bx,by,rad,col);
+            balls.push(ball);
+            var i=0;
+            for (i=0;i<balls.length;i++){
+                balls[i].by -= 10;
+            }
+            drawall();
+       }
+       init();
+    })();
 });

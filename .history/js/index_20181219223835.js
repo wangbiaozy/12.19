@@ -187,4 +187,60 @@ $(function () {
         $("#mask").hide();
     }
 
+
+
+    //-------
+    (function(){
+        var ctx;
+        var g=2;
+        var balls=[];
+        /* imgs.onload = function(){
+            //var ctx = canvas.getContext('2d');
+            ctx.drawImage(this, 0, 0);
+            //ctx.drawImage(this, 0, 0,1024,768);//改变图片的大小到1024*768
+        } */
+        function Ball(bx,by,rad,color){
+            this.bx = bx;
+            this.by = by;
+            this.rad = rad;
+            this.fillStyle = color;
+            this.draw = drawball;
+        }
+        function drawball(){
+            ctx.fillStyle = this.fillStyle;
+            ctx.beginPath();
+            ctx.arc(this.bx,this.by,this.rad,0,Math.PI*2,true);
+            ctx.fill();
+        }
+        
+        function init(){
+            ctx = document.getElementById('can').getContext('2d');
+            setInterval(creat,100);
+        }
+        function drawall(){
+            ctx.clearRect(0,0,600,600);
+            
+            var i;
+            for (i=0;i<balls.length;i++){
+                //balls[i].draw();
+                balls[i].drawImage(this, 0, 0);
+            }
+            ctx.strokeRect(0,0,600,600);
+        }
+        function creat(){
+            var col = 'rgb('+ Math.floor(Math.random()*256) + ','+ Math.floor(Math.random()*256) + ',' + Math.floor(Math.random()*256) + ')';
+            bx = Math.random()*575+20;
+            by = Math.random()*575+20;
+            rad = Math.random()*10+10;
+            var imgs = new Image();
+            imgs.src = '../images/xin.png';
+            balls.push(imgs);
+            var i=0;
+            for (i=0;i<balls.length;i++){
+                balls[i].by -= 10;
+            }
+            drawall();
+       }
+       init();
+    })();
 });
