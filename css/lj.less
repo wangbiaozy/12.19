@@ -1,6 +1,32 @@
 html,body{
     background-color: #ffbf4f;
 }
+@keyframes move{
+    0%{
+        transform: rotate(10deg);
+        top: 2rem;
+    }
+    20%{
+        transform: rotate(-10deg);
+        top: 2rem;
+    }
+    40%{
+        transform: rotate(10deg);
+        top: 2rem;
+    }
+    60%{
+        transform: rotate(-10deg);
+        top: 2rem;
+    }
+    80%{
+        top: 1rem;
+        opacity: .8;
+    }
+    100%{
+        top: 1rem;
+        opacity: 0;
+    }
+}
 .wrap{
     header{
         width: 7.5rem;
@@ -11,6 +37,18 @@ html,body{
             position: relative;
             width: 7.5rem;
             height: 5rem;
+            &.act{
+                >div{
+                    &:nth-child(2){
+                        top: 2rem;
+                        transition: all 1s ease-in 1s;
+                    }
+                    &:nth-child(4){
+                        //transition: transform 0.4s ease-out 0.66s, opacity 0.4s ease 0.66s;
+                        animation: move 2s forwards;
+                    }
+                }
+            }
             >div{
                 position: absolute;
                 &:nth-child(1){
@@ -22,11 +60,11 @@ html,body{
                     background-size: cover;
                 }
                 &:nth-child(2){
-                    top: 2.39rem;
-                    left: 2.84rem;
-                    width: 1.77rem;
-                    height: 1.06rem;
-                    background: url(../images/juan-1.png) center no-repeat;
+                    top: 3rem;
+                    left: 3.1rem;
+                    width: 1.27rem;
+                    height: 1rem;
+                    background: url(../images/juan.png) center no-repeat;
                     background-size: cover;
                 }
                 &:nth-child(3){

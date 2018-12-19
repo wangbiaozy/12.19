@@ -1,0 +1,146 @@
+html,body{
+    background-color: #ffbf4f;
+}
+.wrap{
+    header{
+        width: 7.5rem;
+        height: 5rem;
+        background: url(../images/lj_bg_01.png) center no-repeat;
+        background-size: cover;
+        >div.con{
+            position: relative;
+            width: 7.5rem;
+            height: 5rem;
+            &.act{
+                >div{
+                    &:nth-child(2){
+                        top: 2rem;
+                        transition: all 1s ease-in;
+                    }
+                }
+            }
+            >div{
+                position: absolute;
+                &:nth-child(1){
+                    top: 2.39rem; 
+                    left: 2.89rem;     
+                    width: 1.75rem;
+                    height: 1rem;
+                    background: url(../images/box_in.png) center no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(2){
+                    top: 3rem;
+                    left: 3.1rem;
+                    width: 1.27rem;
+                    height: 1rem;
+                    background: url(../images/juan.png) center no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(3){
+                    top: 2.77rem;
+                    left: 2.88rem;
+                    width: 1.76rem;
+                    height: 1.37rem;
+                    background: url(../images/box_wrap.png) center no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(4){
+                    display: none;
+                    top: 2.1rem;
+                    left: 2.55rem;
+                    width: 2.12rem;
+                    height: 1.28rem;
+                    background: url(../images/box_cover.png) center no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(5){
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 5.48rem;
+                    height: 1.22rem;
+                    div{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 5.48rem;
+                        height: .84rem;
+                        input{
+                            box-sizing: border-box;
+                            padding: 0 .28rem;
+                            width: 4.16rem;
+                            height: .84rem;
+                            font-size: .36rem;
+                            color: #de862e;
+                            border: 3px solid #d67323;
+                            background-color: #ffc762;
+                        }
+                        input::-webkit-outer-spin-button,
+                        input::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                        }
+                        input[type="number"]{
+                            -moz-appearance: textfield;
+                        }
+                        a{
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 1.1rem;
+                            height: .84rem;
+                            font-size: .48rem;
+                            color: #fff6d3;
+                            border: 3px solid #cb1037;
+                            background-color: #ff5656;
+                        }
+                    }
+                    p{
+                        display: none;
+                        font-size: .2rem;
+                        line-height: .4rem;
+                        color: #cb1037;
+                    }
+                }
+            }
+        }
+    }
+    main{
+        width: 7.5rem;
+        height: 8.12rem;
+        background: url(../images/lj_bg_02.png) center no-repeat;
+        background-size: cover;
+    }
+    footer{
+        box-sizing: border-box;
+        padding-top: .36rem;
+        width: 7.5rem;
+        height: 3.03rem;
+        p{
+            padding-left: 1.4rem;
+            font-size: .2rem;
+            text-indent: -3em;
+            color: #cb1037;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            margin: .46rem auto;
+            width: 5.92rem;
+            a{
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 2.6rem;
+                height: .78rem;
+                font-size: .28rem;
+                color: #fff6d3;
+                border: 5px solid #cb1037;
+                background-color: #ff5656;
+            }
+        }
+    }
+}

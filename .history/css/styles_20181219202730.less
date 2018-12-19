@@ -1,0 +1,723 @@
+html,body{
+    background-color: #ffc867;
+}
+@keyframes _rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+ 
+@-webkit-keyframes _rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+/* loading */
+div#loader{
+    >div{
+        &:nth-child(1){
+            span{
+                display: block;
+                margin: 0 auto;
+                &:nth-child(1){
+                    margin-bottom: .05rem;
+                    width: 2.56rem;
+                    height: 1.41rem;
+                    background: url(../images/load_1.png) center no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(2){
+                    width: 1.77rem;
+                    height: 1.05rem;
+                    background: url(../images/load_2.png) center no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+}
+/* 首页 */
+.wrap.sy{
+    display: none;
+    header{
+        position: relative;
+        width: 7.5rem;
+        height: 4rem;
+        background: url(../images/sy-bg_01.png) center no-repeat;
+        background-size: cover;
+        div.rule-btn{
+            position: absolute;
+            top: .42rem;
+            right: .2rem;
+            width: 1.09rem;
+            height: .55rem;
+            background: url(../images/rule_box.png) center no-repeat;
+            background-size: cover;
+            span{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: -.23rem;
+                margin: auto;
+                width: .47rem;
+                height: .46rem;
+                background: url(../images/rule_icon.png) center no-repeat;
+                background-size: cover;
+                animation: _rotate 5s linear infinite;
+                -webkit-animation: _rotate 5s linear infinite;
+            }
+        }
+        div.music{
+            display: none;
+        }
+    }
+    section{
+        width: 7.5rem;
+        height: 3.22rem;
+        background: url(../images/sy-bg_02.png) center no-repeat;
+        background-size: cover;
+    }
+    main{
+        position: relative;
+        width: 7.5rem;
+        height: 4.84rem;
+        background: url(../images/sy-bg_03.png) center no-repeat;
+        background-size: cover;
+        div.card-box{
+            margin: 0 auto;
+            position: relative;
+            width: 4.72rem;
+            div{
+                position: absolute;
+                top: 0;
+                width: 1.98rem;
+                height: 2.97rem;
+                &.card-1{
+                    left: 0;
+                    background: url(../images/card-1.png) center no-repeat;
+                    background-size: cover;
+                    p{
+                        i{
+                            background: url(../images/boy.png) center no-repeat;
+                            background-size: cover;
+                        }
+                    }
+                    &.act{
+                        p{
+                            color: #fff0b5;
+                            i{
+                                background: url(../images/boy_act.png) center no-repeat;
+                                background-size: cover;
+                            }
+                        }
+                    }
+                }
+                &.card-2{
+                    right: 0;
+                    background: url(../images/card-2.png) center no-repeat;
+                    background-size: cover;
+                    p{
+                        i{
+                            background: url(../images/girl.png) center no-repeat;
+                            background-size: cover;
+                        }
+                    }
+                    &.act{
+                        p{
+                            color: #fff0b5;
+                            i{
+                                background: url(../images/girl_act.png) center no-repeat;
+                                background-size: cover;
+                            }
+                        }
+                    }
+                }
+                &.act{
+                    border: 3px solid #fff0b5;
+                    border-radius: .05rem;
+                    &.card-1{
+                        top: -3px;
+                        left: -3px;
+                    }
+                    &.card-2{
+                        top: -3px;
+                        right: -3px;
+                    }
+                }
+                p{
+                    position: absolute;
+                    bottom: -.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    font-size: .28rem;
+                    line-height: 1em;
+                    color: #2d2323;
+                    i{
+                        margin-left: .1rem;
+                        width: .24rem;
+                        height: .24rem;
+                    }
+                }
+            }
+        }
+        >a{
+            position: absolute;
+            top: 3.4rem;
+            left: 1.05rem;
+            width: 5.21rem;
+            height: 1.11rem;
+            background: url(../images/btn_1.png) center no-repeat;
+            background-size: cover;
+        }
+    }
+}
+
+/* 翻牌 */
+.wrap.fp{
+    display: none;
+    header{
+        width: 7.5rem;
+        height: 3.34rem;
+        background: url(../images/fp_bg_01.png) center no-repeat;
+        background-size: cover;
+    }
+    main{
+        overflow: hidden;
+        width: 7.5rem;
+        height: 5.78rem;
+        background: url(../images/fp_bg_02.png) center no-repeat;
+        background-size: cover;
+        ul{
+            margin: 0 auto;
+            position: relative;
+            width: 4.12rem;
+            height: 5.78rem;
+            li{
+                perspective: 1000px;
+                position: absolute;
+                width: 1.78rem;
+                height: 2.67rem;
+                &:nth-child(1){
+                    top: 0;
+                    left: 0;
+                }
+                &:nth-child(2){
+                    top: 0;
+                    right: 0;
+                }
+                &:nth-child(3){
+                    bottom: 0;
+                    left: 0;
+                }
+                &:nth-child(4){
+                    bottom: 0;
+                    right: 0;
+                }
+                &.act{
+                    position: fixed;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    z-index: 500;
+                    >div{
+                        &:first-child{
+                            z-index: 1;
+                            transform: rotateY(180deg);
+                        }
+                        &:last-child{
+                            z-index: 2;
+                            transform: rotateY(0deg);
+                        }
+                    }
+                    &.b1{
+                        >div{
+                            &:last-child{
+                                background: url(../images/hkb.png) center no-repeat;
+                                background-size: cover;
+                                a:nth-child(2){
+                                    display: block;
+                                }
+                                a:nth-child(3){
+                                    display: block;
+                                    background-color: #8ca9de;
+                                }
+                            }
+                        }
+                    }
+                    &.b2{
+                        >div{
+                            &:last-child{
+                                background: url(../images/hjb.png) center no-repeat;
+                                background-size: cover;
+                                a:nth-child(2){
+                                    display: block;
+                                }
+                                a:nth-child(3){
+                                    display: block;
+                                    background-color: #ca9f67;
+                                }
+                            }
+                        }
+                    }
+                    &.b3{
+                        >div{
+                            &:last-child{
+                                background: url(../images/hqb.png) center no-repeat;
+                                background-size: cover;
+                                a:nth-child(2){
+                                    display: block;
+                                }
+                                a:nth-child(3){
+                                    display: block;
+                                    background-color: #ee98cb;
+                                }
+                            }
+                        }
+                    }
+                    &.b4{
+                        >div{
+                            &:last-child{
+                                background: url(../images/xqb.png) center no-repeat;
+                                background-size: cover;
+                                a{
+                                    &:nth-child(4){
+                                        display: block;
+                                        background-color: #ee98cb;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.g1{
+                        >div{
+                            &:last-child{
+                                background: url(../images/hkg.png) center no-repeat;
+                                background-size: cover;
+                                a:nth-child(2){
+                                    display: block;
+                                }
+                                a:nth-child(3){
+                                    display: block;
+                                    background-color: #8ca9de;
+                                }
+                            }
+                        }
+                    }
+                    &.g2{
+                        >div{
+                            &:last-child{
+                                background: url(../images/hjg.png) center no-repeat;
+                                background-size: cover;
+                                a:nth-child(2){
+                                    display: block;
+                                }
+                                a:nth-child(3){
+                                    display: block;
+                                    background-color: #ca9f67;
+                                }
+                            }
+                        }
+                    }
+                    &.g3{
+                        >div{
+                            &:last-child{
+                                background: url(../images/hqg.png) center no-repeat;
+                                background-size: cover;
+                                a:nth-child(2){
+                                    display: block;
+                                }
+                                a:nth-child(3){
+                                    display: block;
+                                    background-color: #ee98cb;
+                                }
+                            }
+                        }
+                    }
+                    &.g4{
+                        >div{
+                            &:last-child{
+                                background: url(../images/xkg.png) center no-repeat;
+                                background-size: cover;
+                                a{
+                                    &:nth-child(4){
+                                        display: block;
+                                        background-color: #8ca9de;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                >div{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    transition: all 1.2s ease; 
+                    transform-style: preserve-3d; 
+                    backface-visibility: hidden;
+                    &:first-child{
+                        background: url(../images/pai.png) center no-repeat;
+                        background-size: cover;
+                        transform: rotateY(0deg);
+                        z-index: 2;
+                    }
+                    &:last-child{
+                        margin: -4.62rem 0 0 -3.075rem;
+                        top: 50%;
+                        left: 50%;
+                        width: 6.15rem;
+                        height: 9.24rem;
+                        transform: rotateY(-180deg);
+                        z-index: 1;
+                        transition: all 1s linear;
+                        i{
+                            position: absolute;
+                            top: -.82rem;
+                            right: 0;
+                            width: .68rem;
+                            height: .68rem;
+                            background: url(../images/close.png) center no-repeat;
+                            background-size: cover;
+                        }
+                        a{
+                            display: none;
+                            position: absolute;
+                            box-sizing: border-box;
+                            bottom: .54rem;
+                            user-select: none;
+                            &:nth-child(2){
+                                left: .42rem;
+                                width: 2.53rem;
+                                height: .85rem;
+                                font-size: .28rem;
+                                line-height: .85rem;
+                                text-align: center;
+                                color: #ffe5b7;
+                                background-color: #cb1037;
+                                border-radius: .5rem;
+                            }
+                            &:nth-child(3){
+                                right: .42rem;
+                                width: 2.53rem;
+                                height: .85rem;
+                                font-size: .28rem;
+                                line-height: .85rem;
+                                text-align: center;
+                                color: #221314;
+                                border: 2px solid #221314;
+                                border-radius: .5rem;
+                            }
+                            &:nth-child(4){
+                                left: 0;
+                                right: 0;
+                                margin: auto;
+                                width: 4.44rem;
+                                height: .85rem;
+                                font-size: .28rem;
+                                line-height: .85rem;
+                                text-align: center;
+                                color: #221314;
+                                border: 2px solid #221314;
+                                border-radius: .5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        box-sizing: border-box;
+        padding: .3rem 0 0 .5rem;
+        width: 7.5rem;
+        height: 2.94rem;
+        background: url(../images/fp_bg_03.png) center no-repeat;
+        background-size: cover;
+        div{
+            width: 6.77rem;
+            height: 2.22rem;
+            &.girl{
+                background: url(../images/fp_girl.png) center no-repeat;
+                background-size: cover;
+            }
+            &.boy{
+                background: url(../images/fp_boy.png) center no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+/* 领奖 */
+@keyframes move{
+    0%{
+        transform: rotate(10deg);
+        top: 2rem;
+    }
+    20%{
+        transform: rotate(-10deg);
+        top: 2rem;
+    }
+    40%{
+        transform: rotate(10deg);
+        top: 2rem;
+    }
+    60%{
+        transform: rotate(-10deg);
+        top: 2rem;
+    }
+    80%{
+        top: 1rem;
+        opacity: .8;
+    }
+    100%{
+        top: 1rem;
+        opacity: 0;
+    }
+}
+.wrap.lj{
+    display: none;
+    header{
+        width: 7.5rem;
+        height: 5rem;
+        background: url(../images/lj_bg_01.png) center no-repeat;
+        background-size: cover;
+        >div.con{
+            position: relative;
+            width: 7.5rem;
+            height: 5rem;
+            &.act{
+                >div{
+                    &:nth-child(2){
+                        top: 2rem;
+                        transition: all 1s ease-in 1s;
+                    }
+                    &:nth-child(4){
+                        //transition: transform 0.4s ease-out 0.66s, opacity 0.4s ease 0.66s;
+                        animation: move 2s forwards;
+                    }
+                }
+            }
+            >div{
+                position: absolute;
+                &:nth-child(1){
+                    top: 2.39rem; 
+                    left: 2.89rem;     
+                    width: 1.75rem;
+                    height: 1rem;
+                    background: url(../images/box_in.png) center no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(2){
+                    top: 3rem;
+                    left: 3.1rem;
+                    width: 1.27rem;
+                    height: 1rem;
+                    background: url(../images/juan.png) center no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(3){
+                    top: 2.77rem;
+                    left: 2.88rem;
+                    width: 1.76rem;
+                    height: 1.37rem;
+                    background: url(../images/box_wrap.png) center no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(4){
+                    top: 2.1rem;
+                    left: 2.55rem;
+                    width: 2.12rem;
+                    height: 1.28rem;
+                    background: url(../images/box_cover.png) center no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(5){
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 5.48rem;
+                    height: 1.22rem;
+                    div{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 5.48rem;
+                        height: .84rem;
+                        input{
+                            box-sizing: border-box;
+                            padding: 0 .28rem;
+                            width: 4.16rem;
+                            height: .84rem;
+                            font-size: .36rem;
+                            color: #de862e;
+                            border: 3px solid #d67323;
+                            background-color: #ffc762;
+                        }
+                        input::-webkit-outer-spin-button,
+                        input::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                        }
+                        input[type="number"]{
+                            -moz-appearance: textfield;
+                        }
+                        a{
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 1.1rem;
+                            height: .84rem;
+                            font-size: .48rem;
+                            color: #fff6d3;
+                            border: 3px solid #cb1037;
+                            background-color: #ff5656;
+                        }
+                    }
+                    p{
+                        display: none;
+                        font-size: .2rem;
+                        line-height: .4rem;
+                        color: #cb1037;
+                    }
+                }
+            }
+        }
+    }
+    main{
+        width: 7.5rem;
+        height: 8.12rem;
+        background: url(../images/lj_bg_02.png) center no-repeat;
+        background-size: cover;
+    }
+    footer{
+        box-sizing: border-box;
+        padding-top: .36rem;
+        width: 7.5rem;
+        height: 3.03rem;
+        p{
+            padding-left: 1.4rem;
+            font-size: .2rem;
+            text-indent: -3em;
+            color: #cb1037;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            margin: .46rem auto;
+            width: 5.92rem;
+            a{
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 2.6rem;
+                height: .78rem;
+                font-size: .28rem;
+                color: #fff6d3;
+                border: 5px solid #cb1037;
+                background-color: #ff5656;
+            }
+        }
+    }
+}
+
+/* 规则 */
+.wrap.rule{
+    display: none;
+    header{
+        width: 7.5rem;
+        height: 4.36rem;
+        background: url(../images/rule_bg_01.png) center no-repeat;
+        background-size: cover;
+    }
+    main{
+        width: 7.5rem;
+        height: 8.99rem;
+        background: url(../images/rule_bg_02.png) center no-repeat;
+        background-size: cover;
+    }
+    section{
+        width: 7.5rem;
+        height: 5.85rem;
+        background: url(../images/rule_bg_03.png) center no-repeat;
+        background-size: cover;
+    }
+    footer{
+        box-sizing: border-box;
+        padding: .5rem .84rem 0;
+        display: flex;
+        justify-content: space-between;
+        width: 7.5rem;
+        height: 2.05rem;
+        a{
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.6rem;
+            height: .78rem;
+            font-size: .28rem;
+            color: #fff6d3;
+            border: 5px solid #cb1037;
+            background-color: #ff5656;
+        }
+    }
+}
+
+/* 王卡 */
+.wrap.wk{
+    display: none;
+    header{
+        width: 7.5rem;
+        height: 1.93rem;
+        background: url(../images/wangka_bg_01.png) center no-repeat;
+        background-size: cover;
+    }
+    main{
+        width: 7.5rem;
+        height: 8.17rem;
+        background: url(../images/wangka_bg_02.png) center no-repeat;
+        background-size: cover;
+    }
+    section{
+        width: 7.5rem;
+        height: 8.28rem;
+        background: url(../images/wangka_bg_03.png) center no-repeat;
+        background-size: cover;
+    }
+    footer{
+        box-sizing: border-box;
+        padding: .5rem .84rem 0;
+        display: flex;
+        justify-content: space-between;
+        width: 7.5rem;
+        height: 2.05rem;
+        a{
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.6rem;
+            height: .78rem;
+            font-size: .28rem;
+            color: #fff6d3;
+            border: 5px solid #cb1037;
+            background-color: #ff5656;
+        }
+    }
+}
+
+/* 遮罩层 */
+div.mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    z-index: 100;
+}
