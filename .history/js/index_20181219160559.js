@@ -14,41 +14,23 @@ $(function () {
     
 
 
+    var sex;
     //选择男女   0:男  1: 女
     $('.card-box').on('click','div',function(){
         var $this = $(this);
         $this.addClass('act').siblings().removeClass('act');
         if($('.card-1').hasClass('act')){
-            sessionStorage.setItem('sex',0);
+            sex = 0;
         }else if($('.card-2').hasClass('act')){
-            sessionStorage.setItem('sex',1);
+            sex = 1;
         }
-    });
-    //开始占卜
-    $('#start').on('click',function(){
-        if($('.card-1').hasClass('act') || $('.card-2').hasClass('act')){
-            window.location.href = './fp.html';
-        }
+        console.log(sex)
     });
     
     //翻牌
-    $('#flip-box').one('click','li',function(){
+    $('#flip-box').on('click','li',function(){
         var $this = $(this);
         $this.addClass('act').siblings().removeClass('act');
-        var sex = sessionStorage.getItem('sex');
-        var random = Math.round(Math.random()*(4-1)+1);
-        if(sex === '0'){
-            $this.addClass('b'+ random);
-        }else if(sex === '1'){
-            $this.addClass('g'+ random);
-        }
-        showMask();
-    });
-
-    //关闭翻牌弹窗
-    $('.close').on('click',function(){
-        $(this).parent().parent().removeClass('act');
-        hideMask();
     });
 
     //移动手机号码验证
@@ -70,10 +52,6 @@ $(function () {
             $('#message').show();
         }
     }
-    //手机号输入框
-    $('#tel').on('input',function(){
-        $('#message').hide();
-    });
     //领奖按钮
     $('#get-btn').on('click',function(){
         test();

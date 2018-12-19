@@ -47,7 +47,7 @@ $(function () {
 
     //关闭翻牌弹窗
     $('.close').on('click',function(){
-        $(this).parent().parent().removeClass('act');
+        $(this).parent().hide();
         hideMask();
     });
 

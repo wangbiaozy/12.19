@@ -63,12 +63,11 @@ html,body{
                             &:last-child{
                                 background: url(../images/hkb.png) center no-repeat;
                                 background-size: cover;
-                                a:nth-child(2){
-                                    display: block;
-                                }
                                 a:nth-child(3){
-                                    display: block;
                                     background-color: #8ca9de;
+                                }
+                                a:nth-child(4){
+                                    display: none;
                                 }
                             }
                         }
@@ -78,12 +77,11 @@ html,body{
                             &:last-child{
                                 background: url(../images/hjb.png) center no-repeat;
                                 background-size: cover;
-                                a:nth-child(2){
-                                    display: block;
-                                }
                                 a:nth-child(3){
-                                    display: block;
                                     background-color: #ca9f67;
+                                }
+                                a:nth-child(4){
+                                    display: none;
                                 }
                             }
                         }
@@ -93,12 +91,11 @@ html,body{
                             &:last-child{
                                 background: url(../images/hqb.png) center no-repeat;
                                 background-size: cover;
-                                a:nth-child(2){
-                                    display: block;
-                                }
                                 a:nth-child(3){
-                                    display: block;
                                     background-color: #ee98cb;
+                                }
+                                a:nth-child(4){
+                                    display: none;
                                 }
                             }
                         }
@@ -109,8 +106,10 @@ html,body{
                                 background: url(../images/xqb.png) center no-repeat;
                                 background-size: cover;
                                 a{
+                                    &:nth-child(2),&:nth-child(3){
+                                        display: none;
+                                    }
                                     &:nth-child(4){
-                                        display: block;
                                         background-color: #ee98cb;
                                     }
                                 }
@@ -122,11 +121,7 @@ html,body{
                             &:last-child{
                                 background: url(../images/hkg.png) center no-repeat;
                                 background-size: cover;
-                                a:nth-child(2){
-                                    display: block;
-                                }
                                 a:nth-child(3){
-                                    display: block;
                                     background-color: #8ca9de;
                                 }
                             }
@@ -137,12 +132,11 @@ html,body{
                             &:last-child{
                                 background: url(../images/hjg.png) center no-repeat;
                                 background-size: cover;
-                                a:nth-child(2){
-                                    display: block;
-                                }
                                 a:nth-child(3){
-                                    display: block;
                                     background-color: #ca9f67;
+                                }
+                                a:nth-child(4){
+                                    display: none;
                                 }
                             }
                         }
@@ -152,12 +146,11 @@ html,body{
                             &:last-child{
                                 background: url(../images/hqg.png) center no-repeat;
                                 background-size: cover;
-                                a:nth-child(2){
-                                    display: block;
-                                }
                                 a:nth-child(3){
-                                    display: block;
                                     background-color: #ee98cb;
+                                }
+                                a:nth-child(4){
+                                    display: none;
                                 }
                             }
                         }
@@ -168,8 +161,10 @@ html,body{
                                 background: url(../images/xkg.png) center no-repeat;
                                 background-size: cover;
                                 a{
+                                    &:nth-child(2),&:nth-child(3){
+                                        display: none;
+                                    }
                                     &:nth-child(4){
-                                        display: block;
                                         background-color: #8ca9de;
                                     }
                                 }
@@ -193,6 +188,7 @@ html,body{
                         z-index: 2;
                     }
                     &:last-child{
+                        overflow: hidden;
                         margin: -4.62rem 0 0 -3.075rem;
                         top: 50%;
                         left: 50%;
@@ -211,7 +207,6 @@ html,body{
                             background-size: cover;
                         }
                         a{
-                            display: none;
                             position: absolute;
                             box-sizing: border-box;
                             bottom: .54rem;

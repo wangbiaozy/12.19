@@ -42,13 +42,6 @@ $(function () {
         }else if(sex === '1'){
             $this.addClass('g'+ random);
         }
-        showMask();
-    });
-
-    //关闭翻牌弹窗
-    $('.close').on('click',function(){
-        $(this).parent().parent().removeClass('act');
-        hideMask();
     });
 
     //移动手机号码验证

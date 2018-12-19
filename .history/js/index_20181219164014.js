@@ -32,23 +32,15 @@ $(function () {
     });
     
     //翻牌
-    $('#flip-box').one('click','li',function(){
+    $('#flip-box').on('click','li',function(){
         var $this = $(this);
         $this.addClass('act').siblings().removeClass('act');
         var sex = sessionStorage.getItem('sex');
-        var random = Math.round(Math.random()*(4-1)+1);
         if(sex === '0'){
-            $this.addClass('b'+ random);
+            $this.addClass('b'+ );
         }else if(sex === '1'){
-            $this.addClass('g'+ random);
+            $this.addClass('g'+ );
         }
-        showMask();
-    });
-
-    //关闭翻牌弹窗
-    $('.close').on('click',function(){
-        $(this).parent().parent().removeClass('act');
-        hideMask();
     });
 
     //移动手机号码验证

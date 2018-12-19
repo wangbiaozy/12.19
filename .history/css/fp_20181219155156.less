@@ -48,6 +48,7 @@ html,body{
                     right: 0;
                     margin: auto;
                     z-index: 500;
+                    transition: all 2s linear 1s;
                     >div{
                         &:first-child{
                             z-index: 1;
@@ -63,12 +64,11 @@ html,body{
                             &:last-child{
                                 background: url(../images/hkb.png) center no-repeat;
                                 background-size: cover;
-                                a:nth-child(2){
-                                    display: block;
-                                }
                                 a:nth-child(3){
-                                    display: block;
                                     background-color: #8ca9de;
+                                }
+                                a:nth-child(4){
+                                    display: none;
                                 }
                             }
                         }
@@ -78,12 +78,11 @@ html,body{
                             &:last-child{
                                 background: url(../images/hjb.png) center no-repeat;
                                 background-size: cover;
-                                a:nth-child(2){
-                                    display: block;
-                                }
                                 a:nth-child(3){
-                                    display: block;
                                     background-color: #ca9f67;
+                                }
+                                a:nth-child(4){
+                                    display: none;
                                 }
                             }
                         }
@@ -93,12 +92,11 @@ html,body{
                             &:last-child{
                                 background: url(../images/hqb.png) center no-repeat;
                                 background-size: cover;
-                                a:nth-child(2){
-                                    display: block;
-                                }
                                 a:nth-child(3){
-                                    display: block;
                                     background-color: #ee98cb;
+                                }
+                                a:nth-child(4){
+                                    display: none;
                                 }
                             }
                         }
@@ -109,8 +107,10 @@ html,body{
                                 background: url(../images/xqb.png) center no-repeat;
                                 background-size: cover;
                                 a{
+                                    &:nth-child(2),&:nth-child(3){
+                                        display: none;
+                                    }
                                     &:nth-child(4){
-                                        display: block;
                                         background-color: #ee98cb;
                                     }
                                 }
@@ -122,11 +122,7 @@ html,body{
                             &:last-child{
                                 background: url(../images/hkg.png) center no-repeat;
                                 background-size: cover;
-                                a:nth-child(2){
-                                    display: block;
-                                }
                                 a:nth-child(3){
-                                    display: block;
                                     background-color: #8ca9de;
                                 }
                             }
@@ -137,12 +133,11 @@ html,body{
                             &:last-child{
                                 background: url(../images/hjg.png) center no-repeat;
                                 background-size: cover;
-                                a:nth-child(2){
-                                    display: block;
-                                }
                                 a:nth-child(3){
-                                    display: block;
                                     background-color: #ca9f67;
+                                }
+                                a:nth-child(4){
+                                    display: none;
                                 }
                             }
                         }
@@ -152,12 +147,11 @@ html,body{
                             &:last-child{
                                 background: url(../images/hqg.png) center no-repeat;
                                 background-size: cover;
-                                a:nth-child(2){
-                                    display: block;
-                                }
                                 a:nth-child(3){
-                                    display: block;
                                     background-color: #ee98cb;
+                                }
+                                a:nth-child(4){
+                                    display: none;
                                 }
                             }
                         }
@@ -168,8 +162,10 @@ html,body{
                                 background: url(../images/xkg.png) center no-repeat;
                                 background-size: cover;
                                 a{
+                                    &:nth-child(2),&:nth-child(3){
+                                        display: none;
+                                    }
                                     &:nth-child(4){
-                                        display: block;
                                         background-color: #8ca9de;
                                     }
                                 }
@@ -200,20 +196,17 @@ html,body{
                         height: 9.24rem;
                         transform: rotateY(-180deg);
                         z-index: 1;
-                        transition: all 1s linear;
                         i{
                             position: absolute;
                             top: -.82rem;
                             right: 0;
-                            width: .68rem;
-                            height: .68rem;
+                            width: .69rem;
+                            height: .69rem;
                             background: url(../images/close.png) center no-repeat;
                             background-size: cover;
                         }
                         a{
-                            display: none;
                             position: absolute;
-                            box-sizing: border-box;
                             bottom: .54rem;
                             user-select: none;
                             &:nth-child(2){
@@ -229,6 +222,7 @@ html,body{
                             }
                             &:nth-child(3){
                                 right: .42rem;
+                                box-sizing: border-box;
                                 width: 2.53rem;
                                 height: .85rem;
                                 font-size: .28rem;
@@ -277,12 +271,4 @@ html,body{
             }
         }
     }
-}
-
-div.mask{
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,.5);
-    z-index: 100;
 }

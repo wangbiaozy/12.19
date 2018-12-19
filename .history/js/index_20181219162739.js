@@ -24,31 +24,18 @@ $(function () {
             sessionStorage.setItem('sex',1);
         }
     });
-    //开始占卜
+
     $('#start').on('click',function(){
-        if($('.card-1').hasClass('act') || $('.card-2').hasClass('act')){
+        if(sessionStorage.getItem('sex')){
             window.location.href = './fp.html';
+            sessionStorage.removeItem('sex');
         }
     });
     
     //翻牌
-    $('#flip-box').one('click','li',function(){
+    $('#flip-box').on('click','li',function(){
         var $this = $(this);
         $this.addClass('act').siblings().removeClass('act');
-        var sex = sessionStorage.getItem('sex');
-        var random = Math.round(Math.random()*(4-1)+1);
-        if(sex === '0'){
-            $this.addClass('b'+ random);
-        }else if(sex === '1'){
-            $this.addClass('g'+ random);
-        }
-        showMask();
-    });
-
-    //关闭翻牌弹窗
-    $('.close').on('click',function(){
-        $(this).parent().parent().removeClass('act');
-        hideMask();
     });
 
     //移动手机号码验证
@@ -70,10 +57,6 @@ $(function () {
             $('#message').show();
         }
     }
-    //手机号输入框
-    $('#tel').on('input',function(){
-        $('#message').hide();
-    });
     //领奖按钮
     $('#get-btn').on('click',function(){
         test();

@@ -18,37 +18,37 @@
                 <li>
                    <div></div>
                    <div>
-                       <i class="close"></i>
-                       <a href="./wangka.html">我要办王卡</a>
-                       <a href="./index.html">再玩一次</a>
-                       <a href="./lj.html">收了这份王的祝福与特权</a>
+                       <i></i>
+                       <a href="">我要办王卡</a>
+                       <a href="">再玩一次</a>
+                       <a href="">收了这份王的祝福与特权</a>
                    </div>
                 </li>
                 <li>
                    <div></div>
                    <div>
-                       <i class="close"></i>
-                       <a href="./wangka.html">我要办王卡</a>
-                       <a href="./index.html">再玩一次</a>
-                       <a href="./lj.html">收了这份王的祝福与特权</a>
+                       <i></i>
+                       <a href="">我要办王卡</a>
+                       <a href="">再玩一次</a>
+                       <a href="">收了这份王的祝福与特权</a>
                    </div>
                 </li>
                 <li>
                    <div></div>
                    <div>
-                       <i class="close"></i>
-                       <a href="./wangka.html">我要办王卡</a>
-                       <a href="./index.html">再玩一次</a>
-                       <a href="./lj.html">收了这份王的祝福与特权</a>
+                       <i></i>
+                       <a href="">我要办王卡</a>
+                       <a href="">再玩一次</a>
+                       <a href="">收了这份王的祝福与特权</a>
                    </div>
                 </li>
                 <li>
                    <div></div>
                    <div>
-                       <i class="close"></i>
-                       <a href="./wangka.html">我要办王卡</a>
-                       <a href="./index.html">再玩一次</a>
-                       <a href="./lj.html">收了这份王的祝福与特权</a>
+                       <i></i>
+                       <a href="">我要办王卡</a>
+                       <a href="">再玩一次</a>
+                       <a href="">收了这份王的祝福与特权</a>
                    </div>
                 </li>
             </ul>
@@ -57,8 +57,6 @@
             <div id="sex"></div>
         </footer>
     </section>
-
-    <div id="mask" class="mask"></div>
 </body>
 </html>
 <script src="js/jquery-1.10.1.min.js"></script>
@@ -67,10 +65,6 @@
     window.onload = function(){
         var sex = sessionStorage.getItem('sex');
         console.log(sex)
-        if(sex === '0'){
-            $('#sex').addClass('boy');
-        }else if(sex === '1'){
-            $('#sex').addClass('girl');
-        }
+        sex === 0 ? $('#sex').addClass('boy') : $('#sex').addClass('girl');
     }
 </script>
