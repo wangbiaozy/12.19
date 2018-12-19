@@ -1,0 +1,115 @@
+html,body{
+    background-color: #ffc867;
+}
+@keyframes _rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+ 
+@-webkit-keyframes _rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+.wrap{
+    header{
+        position: relative;
+        width: 7.5rem;
+        height: 4rem;
+        background: url(../images/sy-bg_01.png) center no-repeat;
+        background-size: cover;
+        div.rule-btn{
+            position: absolute;
+            top: .42rem;
+            right: .2rem;
+            width: 1.09rem;
+            height: .55rem;
+            background: url(../images/rule_box.png) center no-repeat;
+            background-size: cover;
+            span{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: -.23rem;
+                margin: auto;
+                width: .47rem;
+                height: .46rem;
+                background: url(../images/rule_icon.png) center no-repeat;
+                background-size: cover;
+                animation: _rotate 5s ease-in infinite alternate;
+                -webkit-animation: _rotate 5s ease-in infinite alternate;
+            }
+        }
+    }
+    section{
+        width: 7.5rem;
+        height: 3.22rem;
+        background: url(../images/sy-bg_02.png) center no-repeat;
+        background-size: cover;
+    }
+    main{
+        width: 7.5rem;
+        height: 4.84rem;
+        background: url(../images/sy-bg_03.png) center no-repeat;
+        background-size: cover;
+        div.card-box{
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 4.72rem;
+            div{
+                position: relative;
+                width: 1.98rem;
+                height: 2.97rem;
+                &.card-1{
+                    background: url(../images/card-1.png) center no-repeat;
+                    background-size: cover;
+                    p{
+                        i{
+                            background: url(../images/boy.png) center no-repeat;
+                            background-size: cover;
+                        }
+                    }
+                    &.act{
+                        p{
+                            color: #fff0b5;
+                            i{
+                                background: url(../images/boy_act.png) center no-repeat;
+                                background-size: cover;
+                            }
+                        }
+                    }
+                }
+                &.card-2{
+                    background: url(../images/card-2.png) center no-repeat;
+                    background-size: cover;
+                    p{
+                        i{
+                            background: url(../images/girl.png) center no-repeat;
+                            background-size: cover;
+                        }
+                    }
+                }
+                &.act{
+                    border: 3px solid #fff0b5;
+                }
+                p{
+                    position: absolute;
+                    bottom: -.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    font-size: .28rem;
+                    line-height: 1em;
+                    color: #2d2323;
+                    i{
+                        margin-left: .1rem;
+                        width: .24rem;
+                        height: .24rem;
+                    }
+                }
+            }
+        }
+    }
+}
