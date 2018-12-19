@@ -30,7 +30,7 @@ html,body{
                 &:nth-child(1),&:nth-child(2){
                     margin-bottom: .44rem;
                 }
-                &:active{
+                &.act{
                     position: fixed;
                     top: 0;
                     bottom: 0;
@@ -38,7 +38,8 @@ html,body{
                     right: 0;
                     margin: auto;
                     z-index: 500;
-                    >div{
+
+                    span{
                         &:first-child{
                             z-index: 1;
                             transform: rotateY(180deg);
@@ -49,7 +50,7 @@ html,body{
                         }
                     }
                 }
-                >div{
+                span{
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -65,52 +66,9 @@ html,body{
                         z-index: 2;
                     }
                     &:last-child{
-                        margin: -4.62rem 0 0 -3.075rem;
-                        top: 50%;
-                        left: 50%;
-                        width: 6.15rem;
-                        height: 9.24rem;
-                        background: url(../images/hjb.png) center no-repeat;
-                        background-size: cover;
                         transform: rotateY(-180deg);
                         z-index: 1;
-                        i{
-                            position: absolute;
-                            top: -.82rem;
-                            right: 0;
-                            width: .69rem;
-                            height: .69rem;
-                            background: url(../images/close.png) center no-repeat;
-                            background-size: cover;
-                        }
-                        a{
-                            position: absolute;
-                            bottom: .54rem;
-                            user-select: none;
-                            &:nth-child(2){
-                                left: .42rem;
-                                width: 2.53rem;
-                                height: .85rem;
-                                font-size: .28rem;
-                                line-height: .85rem;
-                                text-align: center;
-                                color: #ffe5b7;
-                                background-color: #cb1037;
-                                border-radius: .5rem;
-                            }
-                            &:nth-child(3){
-                                right: .42rem;
-                                box-sizing: border-box;
-                                width: 2.53rem;
-                                height: .85rem;
-                                font-size: .28rem;
-                                line-height: .85rem;
-                                text-align: center;
-                                color: #221314;
-                                border: 2px solid #221314;
-                                border-radius: .5rem;
-                            }
-                        }
+                        &.
                     }
                 }
             }

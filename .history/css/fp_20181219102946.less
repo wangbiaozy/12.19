@@ -1,0 +1,87 @@
+html,body{
+    background-color: #ffbf4f;
+}
+.wrap{
+    header{
+        width: 7.5rem;
+        height: 3.34rem;
+        background: url(../images/fp_bg_01.png) center no-repeat;
+        background-size: cover;
+    }
+    main{
+        width: 7.5rem;
+        height: 5.78rem;
+        background: url(../images/fp_bg_02.png) center no-repeat;
+        background-size: cover;
+        ul{
+            margin: 0 auto;
+            flex-wrap: wrap;
+            width: 4.12rem;
+            height: 5.78rem;
+            li{
+                perspective: 1000px;
+                position: relative;
+                float: left;
+                width: 1.78rem;
+                height: 2.67rem;
+                &:nth-child(odd){
+                    margin-right: .56rem;
+                }
+                &:nth-child(1),&:nth-child(2){
+                    margin-bottom: .44rem;
+                }
+                &:hover{
+                    span{
+                        &:first-child{
+                            z-index: 1;
+                            transform: rotateY(180deg);
+                        }
+                        &:last-child{
+                            z-index: 2;
+                            transform: rotateY(180deg);
+                        }
+                    }
+                }
+                span{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    transition: all 1s ease; 
+                    transform-style: preserve-3d; 
+                    backface-visibility: hidden;
+                    &:first-child{
+                        background: url(../images/pai.png) center no-repeat;
+                        background-size: cover;
+                        z-index: 2;
+                    }
+                    &:last-child{
+                        z-index: 1;
+                       background:url(../images/rule_bg_01.png) center no-repeat;
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        box-sizing: border-box;
+        padding: .3rem 0 0 .5rem;
+        width: 7.5rem;
+        height: 2.94rem;
+        background: url(../images/fp_bg_03.png) center no-repeat;
+        background-size: cover;
+        div{
+            width: 6.77rem;
+            height: 2.22rem;
+            &.girl{
+                background: url(../images/fp_girl.png) center no-repeat;
+                background-size: cover;
+            }
+            &.boy{
+                background: url(../images/fp_boy.png) center no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
